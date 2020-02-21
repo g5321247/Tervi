@@ -9,12 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // for sub
+        stackView.addBackground(color: UIColor(red: 28/255, green: 211/255, blue: 213/255, alpha: 1))
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
+        
     }
 
-
 }
-

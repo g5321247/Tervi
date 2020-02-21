@@ -15,6 +15,7 @@
 		C408ABFA23FD235B003532E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C408ABF823FD235B003532E5 /* LaunchScreen.storyboard */; };
 		C408AC0523FD235B003532E5 /* TerviTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408AC0423FD235B003532E5 /* TerviTests.swift */; };
 		C408AC1023FD235C003532E5 /* TerviUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408AC0F23FD235C003532E5 /* TerviUITests.swift */; };
+		C475877323FFBB4300B1F80D /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877223FFBB4300B1F80D /* StackViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C408AC0B23FD235B003532E5 /* TerviUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TerviUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C408AC0F23FD235C003532E5 /* TerviUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerviUITests.swift; sourceTree = "<group>"; };
 		C408AC1123FD235C003532E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C475877223FFBB4300B1F80D /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				C408ABEF23FD235A003532E5 /* SceneDelegate.swift */,
 				C408ABF123FD235A003532E5 /* ViewController.swift */,
 				C408ABF323FD235A003532E5 /* Main.storyboard */,
+				C475877423FFBB4E00B1F80D /* Extension */,
 				C408ABF623FD235B003532E5 /* Assets.xcassets */,
 				C408ABF823FD235B003532E5 /* LaunchScreen.storyboard */,
 				C408ABFB23FD235B003532E5 /* Info.plist */,
@@ -126,6 +129,14 @@
 				C408AC1123FD235C003532E5 /* Info.plist */,
 			);
 			path = TerviUITests;
+			sourceTree = "<group>";
+		};
+		C475877423FFBB4E00B1F80D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C475877223FFBB4300B1F80D /* StackViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C408ABF223FD235A003532E5 /* ViewController.swift in Sources */,
+				C475877323FFBB4300B1F80D /* StackViewExtension.swift in Sources */,
 				C408ABEE23FD235A003532E5 /* AppDelegate.swift in Sources */,
 				C408ABF023FD235A003532E5 /* SceneDelegate.swift in Sources */,
 			);
