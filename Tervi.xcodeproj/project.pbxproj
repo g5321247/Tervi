@@ -19,6 +19,7 @@
 		C475877623FFBDE400B1F80D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877523FFBDE400B1F80D /* UIColorExtension.swift */; };
 		C475877823FFBECD00B1F80D /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877723FFBECD00B1F80D /* CellView.swift */; };
 		C475877D23FFD26B00B1F80D /* BoarderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877C23FFD26B00B1F80D /* BoarderStackView.swift */; };
+		C475878123FFDBA600B1F80D /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C475877F23FFD45C00B1F80D /* CellView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C475877523FFBDE400B1F80D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C475877723FFBECD00B1F80D /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		C475877C23FFD26B00B1F80D /* BoarderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoarderStackView.swift; sourceTree = "<group>"; };
+		C475877F23FFD45C00B1F80D /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,10 +152,19 @@
 		C475877923FFBED200B1F80D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C475877723FFBECD00B1F80D /* CellView.swift */,
+				C475877E23FFD44E00B1F80D /* CellView */,
 				C475877C23FFD26B00B1F80D /* BoarderStackView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C475877E23FFD44E00B1F80D /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				C475877723FFBECD00B1F80D /* CellView.swift */,
+				C475877F23FFD45C00B1F80D /* CellView.xib */,
+			);
+			path = CellView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C475878123FFDBA600B1F80D /* CellView.xib in Resources */,
 				C408ABFA23FD235B003532E5 /* LaunchScreen.storyboard in Resources */,
 				C408ABF723FD235B003532E5 /* Assets.xcassets in Resources */,
 				C408ABF523FD235A003532E5 /* Main.storyboard in Resources */,

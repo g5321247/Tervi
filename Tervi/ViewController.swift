@@ -11,10 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var stackView: BoarderStackView!
-    @IBAction func tapBtn(_ sender: UIButton) {
-        stackView.removeBorder()
-    }
+    @IBOutlet weak var stackView: UIStackView!
     
     
     override func viewDidLoad() {
@@ -23,6 +20,8 @@ class ViewController: UIViewController {
         // for sub
 //        stackView.isLayoutMarginsRelativeArrangement = true
 //        stackView.layoutMargins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        stackView.addBoarder(color: .focus)
+        let baseView = CellView()
+        baseView.setColor(color: .blue)
+        stackView.addArrangedSubview(baseView)
     }
 }

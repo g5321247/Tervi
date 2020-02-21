@@ -15,27 +15,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brg-06-jWm" customClass="BoarderStackView" customModule="Tervi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="200" width="414" height="696"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-ol-TuP">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="696"/>
-                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                </subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brg-06-jWm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9At-39-ZLe">
-                                <rect key="frame" x="209" y="124" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pQ-o4-9a8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="brg-06-jWm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="200" id="CU3-1W-Pf5"/>
+                            <constraint firstItem="brg-06-jWm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CU3-1W-Pf5"/>
                             <constraint firstAttribute="trailing" secondItem="brg-06-jWm" secondAttribute="trailing" id="TgT-ub-DMw"/>
                             <constraint firstAttribute="bottom" secondItem="brg-06-jWm" secondAttribute="bottom" id="qFo-KZ-oaF"/>
                             <constraint firstItem="brg-06-jWm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="r0a-eW-WoK"/>
