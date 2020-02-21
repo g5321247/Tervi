@@ -16,6 +16,9 @@
 		C408AC0523FD235B003532E5 /* TerviTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408AC0423FD235B003532E5 /* TerviTests.swift */; };
 		C408AC1023FD235C003532E5 /* TerviUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408AC0F23FD235C003532E5 /* TerviUITests.swift */; };
 		C475877323FFBB4300B1F80D /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877223FFBB4300B1F80D /* StackViewExtension.swift */; };
+		C475877623FFBDE400B1F80D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877523FFBDE400B1F80D /* UIColorExtension.swift */; };
+		C475877823FFBECD00B1F80D /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877723FFBECD00B1F80D /* CellView.swift */; };
+		C475877D23FFD26B00B1F80D /* BoarderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C475877C23FFD26B00B1F80D /* BoarderStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		C408AC0F23FD235C003532E5 /* TerviUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerviUITests.swift; sourceTree = "<group>"; };
 		C408AC1123FD235C003532E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C475877223FFBB4300B1F80D /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
+		C475877523FFBDE400B1F80D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		C475877723FFBECD00B1F80D /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		C475877C23FFD26B00B1F80D /* BoarderStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoarderStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 				C408ABED23FD235A003532E5 /* AppDelegate.swift */,
 				C408ABEF23FD235A003532E5 /* SceneDelegate.swift */,
 				C408ABF123FD235A003532E5 /* ViewController.swift */,
+				C475877923FFBED200B1F80D /* View */,
 				C408ABF323FD235A003532E5 /* Main.storyboard */,
 				C475877423FFBB4E00B1F80D /* Extension */,
 				C408ABF623FD235B003532E5 /* Assets.xcassets */,
@@ -135,8 +142,18 @@
 			isa = PBXGroup;
 			children = (
 				C475877223FFBB4300B1F80D /* StackViewExtension.swift */,
+				C475877523FFBDE400B1F80D /* UIColorExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		C475877923FFBED200B1F80D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C475877723FFBECD00B1F80D /* CellView.swift */,
+				C475877C23FFD26B00B1F80D /* BoarderStackView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C475877D23FFD26B00B1F80D /* BoarderStackView.swift in Sources */,
 				C408ABF223FD235A003532E5 /* ViewController.swift in Sources */,
 				C475877323FFBB4300B1F80D /* StackViewExtension.swift in Sources */,
+				C475877823FFBECD00B1F80D /* CellView.swift in Sources */,
+				C475877623FFBDE400B1F80D /* UIColorExtension.swift in Sources */,
 				C408ABEE23FD235A003532E5 /* AppDelegate.swift in Sources */,
 				C408ABF023FD235A003532E5 /* SceneDelegate.swift in Sources */,
 			);
