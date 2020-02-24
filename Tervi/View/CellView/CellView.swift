@@ -14,11 +14,7 @@ class CellView: UIView {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var alphaColorView: UIView!
     @IBOutlet weak var textLL: UILabel!
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-    }
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

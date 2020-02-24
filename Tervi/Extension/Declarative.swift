@@ -17,6 +17,10 @@ extension Declarative {
         self.init()
         configureHandler(self)
     }
+    
+    func configure(configureHandler: (Self) -> Void) {
+        configureHandler(self)
+    }
 }
 
 extension NSObject: Declarative {}
