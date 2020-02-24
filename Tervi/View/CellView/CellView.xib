@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etx-2h-025">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="806.5"/>
+                    <rect key="frame" x="1" y="0.0" width="412" height="806.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKK-1O-aeH">
-                            <rect key="frame" x="175.5" y="392.5" width="63.5" height="21"/>
+                            <rect key="frame" x="174.5" y="392.5" width="63.5" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -37,20 +37,20 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyM-bp-tHl">
-                    <rect key="frame" x="0.0" y="806.5" width="414" height="89.5"/>
+                    <rect key="frame" x="1" y="806.5" width="412" height="89.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="etx-2h-025" secondAttribute="bottom" multiplier="10:9" id="1XU-Uw-OGp"/>
-                <constraint firstItem="iyM-bp-tHl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="78a-FK-NFl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iyM-bp-tHl" secondAttribute="trailing" id="E3Y-xO-ars"/>
                 <constraint firstItem="etx-2h-025" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JKE-4O-gLl"/>
-                <constraint firstItem="etx-2h-025" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PRb-WO-thg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="etx-2h-025" secondAttribute="trailing" id="SUa-N4-xvs"/>
+                <constraint firstItem="iyM-bp-tHl" firstAttribute="trailing" secondItem="etx-2h-025" secondAttribute="trailing" id="Kj6-zb-cx7"/>
+                <constraint firstItem="etx-2h-025" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="1" id="PRb-WO-thg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="etx-2h-025" secondAttribute="trailing" constant="1" id="SUa-N4-xvs"/>
                 <constraint firstAttribute="bottom" secondItem="iyM-bp-tHl" secondAttribute="bottom" id="VXf-Sh-mfr"/>
                 <constraint firstItem="iyM-bp-tHl" firstAttribute="top" secondItem="etx-2h-025" secondAttribute="bottom" id="WQf-bu-uFj"/>
+                <constraint firstItem="iyM-bp-tHl" firstAttribute="leading" secondItem="etx-2h-025" secondAttribute="leading" id="XB7-S4-18y"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>

@@ -20,12 +20,13 @@ class BoarderStackView: UIStackView {
         lineView.translatesAutoresizingMaskIntoConstraints = false
         lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         lineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
-        lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
-        lineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
-
-        lineView.layer.borderColor = UIColor.brown.cgColor
-        lineView.layer.borderWidth = 5
-        lineView.layer.cornerRadius = 5
+        lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -0.5).isActive = true
+        lineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0.5).isActive = true
+        lineView.isUserInteractionEnabled = false
+        
+        lineView.layer.borderColor = color.cgColor
+        lineView.layer.borderWidth = 2.5
+        lineView.layer.cornerRadius = 2.5
     }
     
     

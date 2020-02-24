@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         }
         
         let sub = stackView.arrangedSubviews[2] as! BoarderStackView
-        sub.addBoarder(color: .brown)
+        sub.addBoarder(color: .focus)
     }
     
     @objc func tapConfirmBtn(_ sender: UIButton) {
