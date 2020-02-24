@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-sz-a0w">
-                    <rect key="frame" x="5" y="49" width="404" height="808"/>
+                    <rect key="frame" x="20" y="49" width="374" height="808"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <state key="normal" title="確認">
                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,9 +29,9 @@
             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sY0-sz-a0w" secondAttribute="bottom" constant="5" id="Yoa-1e-UIS"/>
-                <constraint firstItem="sY0-sz-a0w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="eug-26-aHC"/>
+                <constraint firstItem="sY0-sz-a0w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="eug-26-aHC"/>
                 <constraint firstItem="sY0-sz-a0w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="oRi-Ha-rEf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sY0-sz-a0w" secondAttribute="trailing" constant="5" id="oyt-Rh-hoR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sY0-sz-a0w" secondAttribute="trailing" constant="20" id="oyt-Rh-hoR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="118"/>

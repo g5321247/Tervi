@@ -14,7 +14,6 @@ class ButtonView: UIView {
     @IBOutlet weak var confirmBtn: UIButton! {
         didSet {
             confirmBtn.configure {
-                $0.isEnabled = false
                 $0.layer.borderWidth = 1
                 $0.layer.borderColor = UIColor.lightGray.cgColor
             }

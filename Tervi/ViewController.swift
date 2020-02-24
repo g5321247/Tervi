@@ -19,14 +19,35 @@ class ViewController: UIViewController {
         // for sub
 //        stackView.isLayoutMarginsRelativeArrangement = true
 //        stackView.layoutMargins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        let baseView = CellView {
-            $0.setColor(color: .blue)
+        
+        for _ in 0 ... 2 {
+            let baseView = CellView {
+                $0.setColor(color: .blue)
+            }
+            
+            let baseViewTwo = CellView {
+                $0.setColor(color: .blue)
+            }
+
+            
+            let buttonView = ButtonView {
+                $0.confirmBtn.addTarget(self, action: #selector(tapConfirmBtn(_:)), for: .touchUpInside)
+            }
+            
+            let subStackView = BoarderStackView(arrangedSubviews: [
+                baseView,
+                baseViewTwo,
+                buttonView
+            ])
+            
+            
+            subStackView.axis = .vertical
+            subStackView.distribution = .fillEqually
+            stackView.addArrangedSubview(subStackView)
         }
         
-        let buttonView = ButtonView()
-        
-        stackView.addArrangedSubview(baseView)
-        stackView.addArrangedSubview(buttonView)
+        let sub = stackView.arrangedSubviews[2] as! BoarderStackView
+        sub.addBoarder(color: .brown)
     }
     
     @objc func tapConfirmBtn(_ sender: UIButton) {

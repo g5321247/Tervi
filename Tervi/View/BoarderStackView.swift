@@ -10,37 +10,26 @@ import UIKit
 
 class BoarderStackView: UIStackView {
     
-    private var lineBorder: CAShapeLayer?
+    private var lineView: UIView?
     
     func addBoarder(color: UIColor) {
-        guard lineBorder == nil else { return }
-        
-        let lineView = UIView(frame:
-            CGRect(x: frame.origin.x + 5,
-                   y: frame.origin.y + 5,
-                   width: frame.width - 50,
-                   height: frame.height - 50
-            )
-        )
-        
-        lineBorder = createBorder(with: lineView)
-        lineBorder?.strokeColor = color.cgColor
-        lineView.layer.addSublayer(lineBorder!)
-
+        guard lineView == nil else { return }
+        let lineView = UIView()
         addSubview(lineView)
+        
+        lineView.translatesAutoresizingMaskIntoConstraints = false
+        lineView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
+        lineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+        lineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
+        lineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
+
+        lineView.layer.borderColor = UIColor.brown.cgColor
+        lineView.layer.borderWidth = 5
+        lineView.layer.cornerRadius = 5
     }
     
-    private func createBorder(with superview: UIView) -> CAShapeLayer {
-        let lineBorder = CAShapeLayer()
-        lineBorder.frame = superview.bounds
-        lineBorder.fillColor = nil
-        lineBorder.path = UIBezierPath(roundedRect: superview.bounds, cornerRadius: CGFloat(signOf: 5, magnitudeOf: 5)).cgPath
-        lineBorder.lineWidth = 2.5
-        
-        return lineBorder
-    }
     
     func removeBorder() {
-        lineBorder?.removeFromSuperlayer()
+        lineView?.removeFromSuperview()
     }
 }
