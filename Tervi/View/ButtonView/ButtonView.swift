@@ -9,7 +9,7 @@
 import UIKit
 
 class ButtonView: UIView {
-    
+        
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var confirmBtn: UIButton! {
         didSet {

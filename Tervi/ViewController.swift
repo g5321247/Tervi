@@ -15,10 +15,11 @@ struct Position {
 
 protocol ViewModelInputs {
     func startTimer()
+    func selectColumn(column: Int)
 }
 
 protocol ViewModelOutputs {
-    var updateView: ((_ current: Position?, _ new: Position) -> Void)? { get set }
+    var updateView: ((_ current: Position?, _ new: Position?) -> Void)? { get set }
 }
 
 class ViewModel: ViewModelInputs, ViewModelOutputs {
@@ -26,19 +27,19 @@ class ViewModel: ViewModelInputs, ViewModelOutputs {
     var inputs: ViewModelInputs { return self }
     var outputs: ViewModelOutputs { return self }
 
-    var updateView: ((_ current: Position?, _ new: Position) -> Void)?
+    var updateView: ((_ current: Position?, _ new: Position?) -> Void)?
 
     let numberOfColumns: Int
     let numberOfRows: Int
     private var timer: Timer?
-    private var previousPosition: Position?
-    private var newPosition: Position {
+    private var currentPosition: Position?
+    private var newPosition: Position? {
         get {
             let randomColumn = Int.random(in: 0 ..< numberOfColumns)
             let randomRow = Int.random(in: 0 ..< numberOfRows)
 
             let newPosition = Position(column: randomColumn, row: randomRow)
-            previousPosition = newPosition
+            currentPosition = newPosition
             return newPosition
         }
     }
@@ -46,15 +47,20 @@ class ViewModel: ViewModelInputs, ViewModelOutputs {
     init(numberOfColumns: Int, numberOfRows: Int) {
         self.numberOfColumns = numberOfColumns
         self.numberOfRows = numberOfRows
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { [weak self] _ in
-            guard let self = self else { return }
-            self.updateView?(self.previousPosition, self.newPosition)
-        })
     }
     
     func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { [weak self] _ in
+            guard let self = self else { return }
+            self.updateView?(self.currentPosition, self.newPosition)
+        })
+
         timer?.fire()
+    }
+    
+    func selectColumn(column: Int) {
+        guard column == currentPosition?.column else { return }
+        updateView?(currentPosition, nil)
     }
 }
 
@@ -71,16 +77,12 @@ class ViewController: UIViewController {
 //        stackView.layoutMargins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         
         renderUI()
-        let sub = stackView.arrangedSubviews[2] as! BoarderStackView
-        
-        sub.addBoarder(color: .focus)
-        
         bindViewModel()
         viewModel.inputs.startTimer()
     }
     
     private func renderUI() {
-        for column in 1 ... viewModel.numberOfColumns {
+        for column in 0 ..< viewModel.numberOfColumns {
             stackView.addArrangedSubview(createColumnView(column: column))
         }
     }
@@ -92,13 +94,13 @@ class ViewController: UIViewController {
         }
         
         let isFinishedAddingCell = isFinishedAddCellViews(into: subStackView, column: column)
-        addBottomView(into: subStackView, isFinishedAddingCell: isFinishedAddingCell)
+        addBottomView(into: subStackView, isFinishedAddingCell: isFinishedAddingCell, column: column)
         
         return subStackView
     }
     
     private func isFinishedAddCellViews(into stackview: BoarderStackView, column: Int) -> Bool {
-        for _ in 1 ... viewModel.numberOfRows {
+        for _ in 0 ..< viewModel.numberOfRows {
             let baseView = CellView {
                 switch column % 4 {
                 case 0:
@@ -118,16 +120,17 @@ class ViewController: UIViewController {
         return true
     }
     
-    private func addBottomView(into stackview: BoarderStackView, isFinishedAddingCell: Bool) {
+    private func addBottomView(into stackview: BoarderStackView, isFinishedAddingCell: Bool, column: Int) {
         guard isFinishedAddingCell else { return }
         let buttonView = ButtonView {
             $0.confirmBtn.addTarget(self, action: #selector(tapConfirmBtn(_:)), for: .touchUpInside)
+            $0.confirmBtn.tag = column
         }
         stackview.addArrangedSubview(buttonView)
     }
     
     @objc func tapConfirmBtn(_ sender: UIButton) {
-        // clear vm
+        viewModel.inputs.selectColumn(column: sender.tag)
     }
     
     private func bindViewModel() {
@@ -137,7 +140,9 @@ class ViewController: UIViewController {
             if let current = current {
                 self?.updateCell(at: current, isHidden: true)
             }
-            self?.updateCell(at: new, isHidden: false)
+            if let new = new {
+                self?.updateCell(at: new, isHidden: false)
+            }
         }
     }
     
