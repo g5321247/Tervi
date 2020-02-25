@@ -24,6 +24,9 @@ class ViewController: UIViewController {
         
         renderUI()
         let sub = stackView.arrangedSubviews[2] as! BoarderStackView
+        let view = sub.arrangedSubviews[2] as! CellView
+        view.textLL.isHidden = false
+        
         sub.addBoarder(color: .focus)
     }
     

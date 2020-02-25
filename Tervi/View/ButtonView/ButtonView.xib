@@ -18,20 +18,32 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-sz-a0w">
-                    <rect key="frame" x="20" y="49" width="374" height="808"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <state key="normal" title="確認">
-                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="El0-Kg-NJu">
+                    <rect key="frame" x="0.0" y="54" width="414" height="842"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY0-sz-a0w">
+                            <rect key="frame" x="20" y="5" width="374" height="832"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="確認">
+                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="sY0-sz-a0w" firstAttribute="leading" secondItem="El0-Kg-NJu" secondAttribute="leading" constant="20" id="OJD-Gs-CTN"/>
+                        <constraint firstItem="sY0-sz-a0w" firstAttribute="top" secondItem="El0-Kg-NJu" secondAttribute="top" constant="5" id="WQW-HH-RmP"/>
+                        <constraint firstAttribute="bottom" secondItem="sY0-sz-a0w" secondAttribute="bottom" constant="5" id="f1c-p0-kgx"/>
+                        <constraint firstAttribute="trailing" secondItem="sY0-sz-a0w" secondAttribute="trailing" constant="20" id="x0M-ps-RVh"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sY0-sz-a0w" secondAttribute="bottom" constant="5" id="Yoa-1e-UIS"/>
-                <constraint firstItem="sY0-sz-a0w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="eug-26-aHC"/>
-                <constraint firstItem="sY0-sz-a0w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="oRi-Ha-rEf"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sY0-sz-a0w" secondAttribute="trailing" constant="20" id="oyt-Rh-hoR"/>
+                <constraint firstItem="El0-Kg-NJu" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="8om-Al-HDM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="El0-Kg-NJu" secondAttribute="trailing" id="8zD-9n-1PK"/>
+                <constraint firstAttribute="bottom" secondItem="El0-Kg-NJu" secondAttribute="bottom" id="EYK-Yi-eLo"/>
+                <constraint firstItem="El0-Kg-NJu" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fdN-IF-PdI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="118"/>

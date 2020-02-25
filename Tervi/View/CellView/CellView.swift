@@ -13,7 +13,11 @@ class CellView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var alphaColorView: UIView!
-    @IBOutlet weak var textLL: UILabel!
+    @IBOutlet weak var textLL: UILabel! {
+        didSet {
+            textLL.isHidden = true
+        }
+    }
         
     override init(frame: CGRect) {
         super.init(frame: frame)
