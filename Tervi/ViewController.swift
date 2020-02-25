@@ -18,7 +18,7 @@ protocol ViewModelInputs {
 }
 
 protocol ViewModelOutputs {
-    var updateLabel: ((_ current: Position?, _ new: Position) -> Void)? { get set }
+    var updateView: ((_ current: Position?, _ new: Position) -> Void)? { get set }
 }
 
 class ViewModel: ViewModelInputs, ViewModelOutputs {
@@ -26,22 +26,30 @@ class ViewModel: ViewModelInputs, ViewModelOutputs {
     var inputs: ViewModelInputs { return self }
     var outputs: ViewModelOutputs { return self }
 
-    var updateLabel: ((_ current: Position?, _ new: Position) -> Void)?
+    var updateView: ((_ current: Position?, _ new: Position) -> Void)?
 
+    let numberOfColumns: Int
+    let numberOfRows: Int
     private var timer: Timer?
     private var previousPosition: Position?
     private var newPosition: Position {
         get {
-            let newPosition = Position(column: 1, row: 1)
+            let randomColumn = Int.random(in: 0 ..< numberOfColumns)
+            let randomRow = Int.random(in: 0 ..< numberOfRows)
+
+            let newPosition = Position(column: randomColumn, row: randomRow)
             previousPosition = newPosition
             return newPosition
         }
     }
     
-    init() {
+    init(numberOfColumns: Int, numberOfRows: Int) {
+        self.numberOfColumns = numberOfColumns
+        self.numberOfRows = numberOfRows
+        
         timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { [weak self] _ in
             guard let self = self else { return }
-            self.updateLabel?(self.previousPosition, self.newPosition)
+            self.updateView?(self.previousPosition, self.newPosition)
         })
     }
     
@@ -53,10 +61,7 @@ class ViewModel: ViewModelInputs, ViewModelOutputs {
 class ViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
-    var columns = 3
-    var rows = 2
-    
-    let viewModel = ViewModel()
+    let viewModel = ViewModel(numberOfColumns: 3, numberOfRows: 6)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +72,6 @@ class ViewController: UIViewController {
         
         renderUI()
         let sub = stackView.arrangedSubviews[2] as! BoarderStackView
-        let view = sub.arrangedSubviews[2] as! CellView
         
         sub.addBoarder(color: .focus)
         
@@ -76,7 +80,7 @@ class ViewController: UIViewController {
     }
     
     private func renderUI() {
-        for column in 0 ... columns {
+        for column in 1 ... viewModel.numberOfColumns {
             stackView.addArrangedSubview(createColumnView(column: column))
         }
     }
@@ -94,7 +98,7 @@ class ViewController: UIViewController {
     }
     
     private func isFinishedAddCellViews(into stackview: BoarderStackView, column: Int) -> Bool {
-        for _ in 0 ... rows {
+        for _ in 1 ... viewModel.numberOfRows {
             let baseView = CellView {
                 switch column % 4 {
                 case 0:
@@ -129,16 +133,18 @@ class ViewController: UIViewController {
     private func bindViewModel() {
         var outputs = viewModel.outputs
         
-        outputs.updateLabel = { [weak self] (current, new) in
+        outputs.updateView = { [weak self] (current, new) in
             if let current = current {
-                let sub = self?.stackView.arrangedSubviews[current.column] as! BoarderStackView
-                 let view = sub.arrangedSubviews[current.row] as! CellView
-                view.textLL.isHidden = true
+                self?.updateCell(at: current, isHidden: true)
             }
-            
-            let sub = self?.stackView.arrangedSubviews[new.column] as! BoarderStackView
-            let view = sub.arrangedSubviews[new.row] as! CellView
-            view.textLL.isHidden = false
+            self?.updateCell(at: new, isHidden: false)
         }
+    }
+    
+    private func updateCell(at position: Position, isHidden: Bool) {
+        let sub = stackView.arrangedSubviews[position.column] as? BoarderStackView
+        let view = sub?.arrangedSubviews[position.row] as? CellView
+        isHidden ? sub?.removeBorder() : sub?.addBoarder(color: .focus)
+        view?.textLL.isHidden = isHidden
     }
 }
