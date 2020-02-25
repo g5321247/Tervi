@@ -16,6 +16,7 @@ class ButtonView: UIView {
             confirmBtn.configure {
                 $0.layer.borderWidth = 1
                 $0.layer.borderColor = UIColor.lightGray.cgColor
+                $0.titleLabel?.adjustsFontSizeToFitWidth = true
             }
         }
     }

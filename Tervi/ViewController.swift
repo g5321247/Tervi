@@ -12,6 +12,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
+    var columns = 3
+    var rows = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,29 +22,33 @@ class ViewController: UIViewController {
 //        stackView.isLayoutMarginsRelativeArrangement = true
 //        stackView.layoutMargins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
         
-        for _ in 0 ... 2 {
-            let baseView = CellView {
-                $0.setColor(color: .blue)
+        for column in 0 ... columns {
+            let subStackView = BoarderStackView {
+                $0.axis = .vertical
+                $0.distribution = .fillEqually
             }
-            
-            let baseViewTwo = CellView {
-                $0.setColor(color: .blue)
+            for _ in 0 ... rows {
+                let baseView = CellView {
+                    switch column % 4 {
+                    case 0:
+                        $0.setColor(color: .blue)
+                    case 1:
+                        $0.setColor(color: .red)
+                    case 2:
+                        $0.setColor(color: .yellow)
+                    case 3:
+                        $0.setColor(color: .brown)
+                    default:
+                        fatalError()
+                    }
+                }
+                subStackView.addArrangedSubview(baseView)
             }
-
             
             let buttonView = ButtonView {
                 $0.confirmBtn.addTarget(self, action: #selector(tapConfirmBtn(_:)), for: .touchUpInside)
             }
-            
-            let subStackView = BoarderStackView(arrangedSubviews: [
-                baseView,
-                baseViewTwo,
-                buttonView
-            ])
-            
-            
-            subStackView.axis = .vertical
-            subStackView.distribution = .fillEqually
+            subStackView.addArrangedSubview(buttonView)
             stackView.addArrangedSubview(subStackView)
         }
         
