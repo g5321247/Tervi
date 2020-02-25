@@ -25,6 +25,7 @@
 		C475878123FFDBA600B1F80D /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C475877F23FFD45C00B1F80D /* CellView.xib */; };
 		C4DD16E72405146000467A49 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD16E62405146000467A49 /* ViewModel.swift */; };
 		C4DD16EA240514EC00467A49 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD16E9240514EC00467A49 /* Position.swift */; };
+		C4DD16EC24051C2C00467A49 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DD16EB24051C2C00467A49 /* EntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C475877F23FFD45C00B1F80D /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		C4DD16E62405146000467A49 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C4DD16E9240514EC00467A49 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		C4DD16EB24051C2C00467A49 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				C408ABF123FD235A003532E5 /* ViewController.swift */,
+				C4DD16EB24051C2C00467A49 /* EntryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				C438EF6824035C5C00C47A04 /* Declarative.swift in Sources */,
 				C475877D23FFD26B00B1F80D /* BoarderStackView.swift in Sources */,
 				C408ABF223FD235A003532E5 /* ViewController.swift in Sources */,
+				C4DD16EC24051C2C00467A49 /* EntryViewController.swift in Sources */,
 				C475877323FFBB4300B1F80D /* StackViewExtension.swift in Sources */,
 				C475877823FFBECD00B1F80D /* CellView.swift in Sources */,
 				C475877623FFBDE400B1F80D /* UIColorExtension.swift in Sources */,

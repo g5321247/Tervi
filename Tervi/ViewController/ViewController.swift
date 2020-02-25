@@ -11,18 +11,18 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
-    let viewModel = ViewModel(numberOfColumns: 3, numberOfRows: 6)
+    var viewModel: ViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // for sub
-//        stackView.isLayoutMarginsRelativeArrangement = true
-//        stackView.layoutMargins = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-        
         renderUI()
         bindViewModel()
         viewModel.inputs.startTimer()
+    }
+    
+    func inject(numberOfColumn: Int, numberOfRow: Int) {
+        viewModel = ViewModel(numberOfColumns: numberOfColumn, numberOfRows: numberOfRow)
     }
     
     private func renderUI() {
