@@ -8,23 +8,47 @@
 
 import UIKit
 
+enum ClientError: Error {
+    case notValidValue(String)
+    case outOfRange(String)
+}
+
 class EntryViewController: UIViewController {
 
     @IBOutlet weak var columnTF: UITextField!
     @IBOutlet weak var rowTF: UITextField!
     
     @IBAction func tapConfirm(_ sender: UIButton) {
+        
+        do {
+            let position = try isValidEnteringValue(maxColumn: 4, maxRow: 4)
+            performSegue(withIdentifier: "toNextVC", sender: position)
+        } catch let error as ClientError {
+            switch error {
+            case .notValidValue(let msg), .outOfRange(let msg):
+                showToast(message: msg)
+            }
+            
+        } catch {
+            print("Unhandled error: \(error)")
+        }
+    }
+        
+    func isValidEnteringValue(maxColumn: Int, maxRow: Int) throws -> Position {
         guard let numberOfColumn = Int(columnTF.text ?? "") else {
-            showToast(message: "行數")
-            return
+            throw ClientError.notValidValue("行數不得為空白或非數字的值")
         }
         
         guard let numberOfRow = Int(rowTF.text ?? "") else {
-            showToast(message: "列數")
-            return
+            throw ClientError.notValidValue("列數不得為空白或非數字的值")
         }
         
-        performSegue(withIdentifier: "toNextVC", sender: Position(column: numberOfColumn, row: numberOfRow))
+        
+        guard numberOfColumn <= maxColumn && numberOfRow <= maxRow else {
+            throw ClientError.notValidValue("行數不得超過 \(maxColumn),列數不得超過 \(maxRow)")
+        }
+        
+        return Position(column: numberOfColumn, row: numberOfRow)
     }
     
     override func viewDidLoad() {
